@@ -13,6 +13,15 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+Route::get("/pricing", function () {
+    return Inertia::render("Pricing");
+})->name("pricing");
+Route::get("/contact", function () {
+    return Inertia::render("Contact");
+})->name("contact");
+Route::get("/about", function () {
+    return Inertia::render("About");
+})->name("about");
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
