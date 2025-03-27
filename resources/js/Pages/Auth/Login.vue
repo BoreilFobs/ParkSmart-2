@@ -25,6 +25,9 @@ const submit = () =>
                 {{ status }}
             </p>
 
+            <p v-if="$page.props.error" class="text-red-500">
+                {{ $page.props.error }}
+            </p>
             <form @submit.prevent="submit" class="mt-6 space-y-4">
                 <div>
                     <InputLabel for="email" value="Email" class="text-white" />
