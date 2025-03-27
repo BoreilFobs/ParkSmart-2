@@ -19,9 +19,9 @@ Route::get("/pricing", function () {
 Route::get("/contact", function () {
     return Inertia::render("Contact");
 })->name("contact");
-Route::get("/about", function () {
-    return Inertia::render("About");
-})->name("about");
+Route::get('reserve', function () {
+    return Inertia::render('Reservations');
+})->name('reservations');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
