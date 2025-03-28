@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -22,6 +23,8 @@ Route::get("/contact", function () {
 Route::get('reserve', function () {
     return Inertia::render('Reservations');
 })->name('reservations');
+Route::post('/reserve/create', [ReservationController::class, 'store']);
+Route::get('/reservations', [ReservationController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
             $table->string("user_name");
-            $table->foreignId("space_id")->references("id")->on("parking_spaces")->onDelete("cascade");
+            $table->string("plate");
             $table->timestamp("start_time");
             $table->timestamp("end_time");
-            $table->string("status");
+            $table->string("spot");
+            $table->double("total");
             $table->timestamps();
         });
     }
