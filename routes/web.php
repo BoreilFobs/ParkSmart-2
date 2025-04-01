@@ -26,11 +26,14 @@ Route::get('reserve', function () {
 Route::post('/reserve/create', [ReservationController::class, 'store']);
 Route::get('/reservations', [ReservationController::class, 'index']);
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [ReservationController::class, 'index'])->name('dashboard');
+    Route::post('/edit-slot', [ReservationController::class, 'editSlot'])->name('edit-slot');
+    Route::delete('/reservations/{id}', [ReservationController::class, 'destroy']);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

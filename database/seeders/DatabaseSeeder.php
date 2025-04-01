@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Slot;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,17 +14,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Seed users
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => Hash::make('0000000000')
         ]);
-         User::create([
+
+        User::create([
             'name' => 'admin',
             'email' => 'admin@admin.com',
-            'password' => Hash::make('0000000000'),
+            'password' => bcrypt('0000000000'),
+        ]);
+
+        // Seed a slot
+        Slot::create([
+            'number' => 0,
         ]);
     }
 }
