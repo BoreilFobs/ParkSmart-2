@@ -38,6 +38,7 @@ class ReservationController extends Controller
             'start_time' => 'required|date',
             'end_time' => 'required|date',
             'spot' => 'required|string',
+            'location' => 'required|string',
             'total' => 'required|numeric',
         ]);
 

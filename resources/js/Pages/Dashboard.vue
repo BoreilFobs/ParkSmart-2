@@ -169,7 +169,12 @@
                                     <th
                                         class="px-4 py-2 text-left text-xs font-medium text-gray-500"
                                     >
-                                        Zone/Spot
+                                        Spot
+                                    </th>
+                                    <th
+                                        class="px-4 py-2 text-left text-xs font-medium text-gray-500"
+                                    >
+                                        Location
                                     </th>
                                     <th
                                         class="px-4 py-2 text-left text-xs font-medium text-gray-500"
@@ -213,6 +218,14 @@
                                         {{ res.spot }}
                                         <span class="text-gray-500"
                                             >#{{ res.spot }}</span
+                                        >
+                                    </td>
+                                    <td
+                                        class="px-4 py-3 whitespace-nowrap text-sm"
+                                    >
+                                        {{ res.location }}
+                                        <span class="text-gray-500"
+                                            >#{{ res.location }}</span
                                         >
                                     </td>
                                     <td

@@ -12,6 +12,7 @@ class Reservation extends Model
         'plate',
         'start_time',
         'end_time',
+        'location',
         'total',
     ];
 }

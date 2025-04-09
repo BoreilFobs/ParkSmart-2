@@ -100,6 +100,36 @@
                                 {{ errors.end_time }}
                             </p>
                         </div>
+                        <div>
+                            <label class="block text-sm text-gray-300 mb-1"
+                                >Location*</label
+                            >
+                            <select
+                                v-model="form.location"
+                                :min="form.end_time || minEntryTime"
+                                required
+                                placeholder="Location"
+                                class="w-full bg-gray-700 border border-gray-600 rounded p-3 text-white focus:ring-2 focus:ring-emerald-500"
+                            >
+                                <option value="yaounde">yaounde</option>
+                                <option value="yaounde">yaounde</option>
+                                <option value="yaounde">yaounde</option>
+                                <option value="yaounde">yaounde</option>
+                                <option value="yaounde">yaounde</option>
+                                <option value="yaounde">yaounde</option>
+                                <option value="yaounde">yaounde</option>
+                                <option value="yaounde">yaounde</option>
+                                <option value="yaounde">yaounde</option>
+                                <option value="yaounde">yaounde</option>
+                                <option value="yaounde">yaounde</option>
+                            </select>
+                            <p
+                                v-if="errors.location"
+                                class="text-red-500 text-sm mt-1"
+                            >
+                                {{ errors.location }}
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -176,6 +206,7 @@ export default {
             start_time: "",
             end_time: "",
             spot: "standard",
+            location: "",
         });
 
         // Errors object
@@ -228,6 +259,8 @@ export default {
                 errors.value.end_time = "Exit time is required.";
             if (!form.value.spot)
                 errors.value.spot = "Parking spot is required.";
+            if (!form.value.location)
+                errors.value.location = "Location is required.";
             console.log(calculateTotal());
 
             if (Object.keys(errors.value).length === 0) {
@@ -237,6 +270,7 @@ export default {
                     start_time: form._rawValue.start_time,
                     end_time: form._rawValue.end_time,
                     spot: form._rawValue.spot,
+                    location: form._rawValue.location,
                     total: calculateTotal(),
                 });
                 alert("Reservation confirmed! ");

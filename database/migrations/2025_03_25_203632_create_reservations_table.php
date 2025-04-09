@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp("start_time");
             $table->timestamp("end_time");
             $table->string("spot");
+            $table->string("location");
             $table->double("total");
             $table->timestamps();
         });
